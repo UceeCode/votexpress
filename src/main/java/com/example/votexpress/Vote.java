@@ -14,18 +14,21 @@ public class Vote {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(name = "candidate", nullable = false)
-    private String candidate;
+    @ManyToOne
+    @JoinColumn(name = "candidate_id", nullable = false)
+    private Candidate candidate;
 
-    @Column(name = "election_id", nullable = false)
-    private Long electionId;
+    @ManyToOne
+    @JoinColumn(name = "election_id", nullable = false)
+    private Election election;
+
 
     public Vote() {}
 
-    public Vote(User user, String candidate, Long electionId) {
+    public Vote(User user, Candidate candidate, Election election) {
         this.user = user;
         this.candidate = candidate;
-        this.electionId = electionId;
+        this.election = election;
     }
 
     public User getUser() {
@@ -36,19 +39,19 @@ public class Vote {
         this.user = user;
     }
 
-    public String getCandidate() {
+    public Candidate getCandidate() {
         return candidate;
     }
 
-    public void setCandidate(String candidate) {
+    public void setCandidate(Candidate candidate) {
         this.candidate = candidate;
     }
 
-    public Long getElectionId() {
-        return electionId;
+    public Election getElection() {
+        return election;
     }
 
-    public void setElectionId(Long electionId) {
-        this.electionId = electionId;
+    public void setElection(Election election) {
+        this.election = election;
     }
 }
