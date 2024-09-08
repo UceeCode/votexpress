@@ -16,12 +16,16 @@ public class Candidate {
     @Column(name = "party", nullable = false)
     private String party;
 
+    @ManyToOne
+    @JoinColumn(name = "election_id", nullable = false)
+    private Election election;
 
     public Candidate() {}
 
-    public Candidate(String name, String party) {
+    public Candidate(String name, String party, Election election) {
         this.name = name;
         this.party = party;
+        this.election = election;
     }
 
     public long getId() {
@@ -46,5 +50,13 @@ public class Candidate {
 
     public void setParty(String party) {
         this.party = party;
+    }
+
+    public Election getElection() {
+        return election;
+    }
+
+    public void setElection(Election election) {
+        this.election = election;
     }
 }
