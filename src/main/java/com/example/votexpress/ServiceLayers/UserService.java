@@ -19,6 +19,9 @@ public class UserService {
 
     //Register a user
     public User registerUser(User user) {
+        if (userRepositories.findByEmail(user.getEmail()).isPresent()) {
+            throw new IllegalArgumentException("Email is already in use.");
+        }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepositories.save(user);
     }

@@ -27,4 +27,18 @@ public class CandidateService {
         return candidateRepository.findById(id).orElseThrow(() ->
                 new RuntimeException("Could not find candidate with id: " + id));
     }
+
+    // Implementing update and delete methods
+    public Candidate updateCandidate(long id, Candidate candidateDetails) {
+        Candidate candidate = getCandidateById(id);
+        candidate.setName(candidateDetails.getName());
+        candidate.setParty(candidateDetails.getParty());
+        candidate.setElection(candidateDetails.getElection());
+        return candidateRepository.save(candidate);
+    }
+
+    public void deleteCandidate(long id) {
+        Candidate candidate = getCandidateById(id);
+        candidateRepository.delete(candidate);
+    }
 }

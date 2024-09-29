@@ -26,4 +26,16 @@ public class ElectionService {
         return electionRepository.findById(id).orElseThrow(() ->
         new RuntimeException("Election not found"));
     }
+
+    public Election updateElection(long id, Election electionDetails) {
+        Election existingElection = getElectionById(id);
+        existingElection.setName(electionDetails.getName());
+        existingElection.setStartdate(electionDetails.getStartdate());
+        existingElection.setEnddate(electionDetails.getEnddate());
+        return electionRepository.save(existingElection);
+    }
+
+    public void deleteElection(long id) {
+        electionRepository.deleteById(id);
+    }
 }
