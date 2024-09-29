@@ -1,7 +1,7 @@
 package com.example.votexpress.ServiceLayers;
 
 import com.example.votexpress.Repositories.VoteRepository;
-import com.example.votexpress.Vote;
+import com.example.votexpress.Models.Vote;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

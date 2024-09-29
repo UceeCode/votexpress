@@ -1,6 +1,6 @@
 package com.example.votexpress.ServiceLayers;
 
-import com.example.votexpress.Election;
+import com.example.votexpress.Models.Election;
 import com.example.votexpress.Repositories.ElectionRepository;
 import org.springframework.stereotype.Service;
 

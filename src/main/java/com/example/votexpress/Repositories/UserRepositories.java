@@ -1,6 +1,6 @@
 package com.example.votexpress.Repositories;
 
-import com.example.votexpress.User;
+import com.example.votexpress.Models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

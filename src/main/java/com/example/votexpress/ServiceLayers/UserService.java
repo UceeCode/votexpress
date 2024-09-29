@@ -1,7 +1,7 @@
 package com.example.votexpress.ServiceLayers;
 
 import com.example.votexpress.Repositories.UserRepositories;
-import com.example.votexpress.User;
+import com.example.votexpress.Models.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

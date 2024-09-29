@@ -1,4 +1,4 @@
-package com.example.votexpress;
+package com.example.votexpress.Models;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
