@@ -4,6 +4,8 @@ import com.example.votexpress.Models.Election;
 import com.example.votexpress.Repositories.ElectionRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ElectionService {
     private final ElectionRepository electionRepository;
@@ -33,6 +35,10 @@ public class ElectionService {
         existingElection.setStartdate(electionDetails.getStartdate());
         existingElection.setEnddate(electionDetails.getEnddate());
         return electionRepository.save(existingElection);
+    }
+
+    public List<Election> getAllElections(){
+        return electionRepository.findAll();
     }
 
     public void deleteElection(long id) {
