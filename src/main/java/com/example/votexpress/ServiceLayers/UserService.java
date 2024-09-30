@@ -26,7 +26,7 @@ public class UserService {
 
     // Find a user by email
     public Optional<User> findByUserByEmail(String email) {
-        return userRepositories.findByEmail(email);
+       return userRepositories.findByEmail(email);
     }
 
     // Find a user by ID
